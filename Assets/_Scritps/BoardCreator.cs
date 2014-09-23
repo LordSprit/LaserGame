@@ -7,6 +7,7 @@ public class BoardCreator : MonoBehaviour
     public int height = 1;
     public Transform boxPrefab;
     private Transform box;
+    public float offset = 0.64f;
 
     // Use this for initialization
     void Start()
@@ -16,7 +17,7 @@ public class BoardCreator : MonoBehaviour
         {
             for (j = 0; j < width; j++)
             {
-                box = Instantiate(boxPrefab, new Vector3(j * 0.64f, i * 0.64f, 0.5f), Quaternion.identity) as Transform;
+                box = Instantiate(boxPrefab, new Vector3(j * offset, i * offset, 0.5f), Quaternion.identity) as Transform;
                 box.parent = this.transform;
             }
         }
